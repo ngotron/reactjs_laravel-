@@ -2,6 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 
 import ListFood from "./component/ListFood";
+import Statistical from "./component/Statistical";
 function App() {
   return (
     <>
@@ -15,17 +16,17 @@ function App() {
                 </Link>
               </li>
               <li>
-                {/* <Link to={"/addcar"} className="nav-link">
-                AddCar
-              </Link> */}
+                <Link to={"/statistical"} className="nav-link">
+                  Statistical
+                </Link>
               </li>
             </ul>
           </nav>
           <hr />
           <Routes>
             <Route path="/" element={<ListFood />} />
-            {/* <Route path="/addcar" element={<AddCar />} />
-          <Route path="/cars/edit/:id" element={<Edit />} /> */}
+            <Route path="/statistical" element={<Statistical />} />
+            {/* <Route path="/cars/edit/:id" element={<Edit />} /> */}
           </Routes>
         </div>
       </Router>
