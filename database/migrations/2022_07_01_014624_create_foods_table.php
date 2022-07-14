@@ -18,6 +18,8 @@ return new class extends Migration
             $table->string('name', 100);
             $table->string('decription', 500);
             $table->float('price');
+            $table->unsignedInteger('cate_id');
+            $table->foreign('cate_id')->references("id")->on('categorys')->onDelete("cascade")->onUpdate("cascade");
             $table->string('image');
             $table->timestamps();
         });

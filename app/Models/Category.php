@@ -10,8 +10,8 @@ class Category extends Model
     use HasFactory;
     protected $table = 'categorys';
     protected $fillable = ['name'];
-    public function Food()
+    public function foods()
     {
-        return $this->belongsTo(Food::class, 'type_id', 'id');
+        return $this->hasMany(Food::class, 'cate_id', 'id');
     }
 }

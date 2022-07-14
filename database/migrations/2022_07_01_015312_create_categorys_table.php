@@ -16,8 +16,6 @@ return new class extends Migration
         Schema::create('categorys', function (Blueprint $table) {
             $table->increments("id");
             $table->string('name');
-            $table->unsignedInteger('type_id');
-            $table->foreign('type_id')->references('id')->on('foods')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
         });
     }

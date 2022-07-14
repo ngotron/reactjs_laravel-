@@ -9,9 +9,9 @@ class Food extends Model
 {
     use HasFactory;
     protected $table = 'foods';
-    protected $fillable = ['name', 'decription', 'price', 'image'];
-    public function Categogys()
+    protected $fillable = ['name', 'decription', 'price', 'image', 'cate_id'];
+    public function categogy()
     {
-        return $this->hasMany(Category::class, 'type_id', 'id');
+        return $this->belongsTo(Category::class, 'cate_id', 'id');
     }
 }
